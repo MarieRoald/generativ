@@ -50,5 +50,6 @@ def draw():
             draw_eyeball(xpos, ypos, random_uniform(0.8, 1.1)*90)
 
     no_loop()
+    save("sirkler.png")
 
 run()
