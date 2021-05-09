@@ -16,11 +16,14 @@ def draw_eyeball(x, y, r):
         stroke_weight(0)
         circle((0, 0), r)
 
+        color_mode('HSB', 360, 100, 100)
         fill(
-            242*random_gaussian(mean=1, std_dev=0.1),
-            190*random_gaussian(mean=1, std_dev=0.1),
-            92*random_gaussian(mean=1, std_dev=0.1),
+            random_uniform(20, 40),
+            random_uniform(40, 80),
+            random_uniform(80, 95)
             )
+        color_mode('RGB', 255, 255, 255)
+
         stroke_weight(r/20)
         stroke(33, 46, 64)
         translate(random_uniform(low=-r*0.1, high=r*0.1), 
@@ -42,8 +45,8 @@ def draw():
     w = 120
     for i in range(0, width, w):
         for j in range(0, height, w):
-            xpos = i + random_uniform(-10, 10)
-            ypos = j + random_uniform(-10, 10)
+            xpos = w / 2 + i + random_uniform(-10, 10)
+            ypos = w / 2 + j + random_uniform(-10, 10)
             draw_eyeball(xpos, ypos, random_uniform(0.8, 1.1)*90)
 
     no_loop()
