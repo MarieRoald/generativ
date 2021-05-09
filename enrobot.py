@@ -46,6 +46,7 @@ def draw():
     rect( 55, -250, 50, 50 )
     
     no_loop()
+    save("enrobot.png")
 
 
 run()
